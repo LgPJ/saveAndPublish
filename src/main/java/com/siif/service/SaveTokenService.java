@@ -25,9 +25,7 @@ public class SaveTokenService {
 	//Method that retrieves access token
 	public String save() throws Exception{
 
-		try {
-
-			
+		try {		
 			Invocation.Builder so = ClientBuilder
 					.newClient()
 					.target(uri).request();
@@ -43,6 +41,7 @@ public class SaveTokenService {
 			
 			String token = j.getString("acces_token");
 
+			System.out.println("ESTE ES EL TOKEN: " + token);
 			return token;
 			
 		} catch (Exception e) {

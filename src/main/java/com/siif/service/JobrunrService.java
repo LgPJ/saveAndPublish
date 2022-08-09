@@ -14,8 +14,7 @@ public class JobrunrService {
 	
 	//Execute recurring get token job every 15 minutes
 	public void execute() {
-		 jobScheduler.scheduleRecurrently(
-				 Cron.every15minutes(), () -> saveTokenService.save());
+		 jobScheduler.scheduleRecurrently(() -> saveTokenService.save(), Cron.every5minutes());
 	}
 
 }
