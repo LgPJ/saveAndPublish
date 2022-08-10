@@ -3,7 +3,9 @@ package com.siif.service;
 import org.jobrunr.scheduling.JobScheduler;
 import org.jobrunr.scheduling.cron.Cron;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class JobrunrService {
 	
 	@Autowired
