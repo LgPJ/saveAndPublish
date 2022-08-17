@@ -14,14 +14,19 @@ public class SaveToken {
 	@Autowired
 	SaveTokenService saveTokenService;
 	
-	private String SAVED_TOKENS;
-	
-	
 	@PostMapping("/call")
 	private String callSaveToken() throws Exception{
 		
+		if(saveTokenService.TOKEN == null) {
+			
+			return saveTokenService.save();
+			
+		} else {
+			
+			return saveTokenService.TOKEN;
+		}
 		// Token obtained to communicate with services
-		return SAVED_TOKENS = saveTokenService.save();
+		 
 
 	}
 }

@@ -21,11 +21,14 @@ public class SaveTokenService {
 
 	@Value("${auth.password}")
 	private String password;
+	
+	public String TOKEN = null;
 
 	//Method that retrieves access token
 	public String save() throws Exception{
 
 		try {		
+			
 			Invocation.Builder so = ClientBuilder
 					.newClient()
 					.target(uri).request();
@@ -42,6 +45,11 @@ public class SaveTokenService {
 			String token = j.getString("acces_token");
 
 			System.out.println("ESTE ES EL TOKEN: " + token);
+			
+			//obtener(token);
+			
+			TOKEN = token;
+			
 			return token;
 			
 		} catch (Exception e) {
